@@ -142,6 +142,24 @@ body{
 .team-grid .card{padding:0}
 .team-grid .card h3{margin:0.5rem 0 0.15rem 0}
 
+/* Learning grid & timeline */
+.grid{display:grid}
+.timeline{list-style:none;padding:0;margin:0.5rem 0 0 0}
+.timeline li{padding:0.6rem 0;border-left:3px solid rgba(11,95,168,0.06);margin-left:0.6rem;padding-left:1rem}
+
+/* Testimonial */
+.testimonial{font-size:1.05rem;font-style:italic;padding:1rem;border-left:4px solid rgba(125,211,252,0.18);background:linear-gradient(180deg,rgba(250,250,252,0.6),rgba(255,255,255,0.6));border-radius:8px}
+.testimonial cite{display:block;margin-top:0.6rem;font-style:normal;font-weight:700;color:var(--muted-2)}
+
+/* CTA emphasised */
+.btn.cta{background:var(--accent);color:#fff;padding:0.7rem 1.05rem;border-radius:14px;font-weight:800}
+.btn.cta:hover{transform:translateY(-5px);box-shadow:0 28px 90px rgba(11,95,168,0.16)}
+
+@media(max-width:900px){
+  .grid[style]{grid-template-columns:1fr!important}
+  .hero-content{padding:0.9rem}
+}
+
 /* stagger animation using CSS custom property for delays */
 .stagger > *{opacity:0;transform:translateY(10px);animation:popIn var(--anim-med) var(--ease) both;animation-delay:var(--delay, 0ms)}
 
