@@ -4,10 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="TD3 Web Arena — formation pratique en HTML, CSS et design d'interface. Ateliers, projet final et suivi personnalisé.">
   <title>About Us</title>
   <link rel="stylesheet" href="../../assets/css/td3/web-arena.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
   <div class="container anim-fade">
     <header class="site-header" role="banner">
       <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-hidden="true">
@@ -33,11 +35,11 @@
         <h2 id="hero-title" class="gradient-title">Notre mission pédagogique</h2>
         <p>Accompagner les apprenants vers l'autonomie numérique et la créativité web, en favorisant la pratique et la collaboration.</p>
         <p class="muted">Projets pratiques, retours réguliers et bonnes pratiques UX/CSS.</p>
-        <p><a class="btn" href="#team">Rencontrer l'équipe</a></p>
+        <p><a class="btn primary" href="#team">Rencontrer l'équipe</a></p>
       </div>
     </section>
 
-    <main>
+  <main id="main-content">
       <section id="team" class="stagger team-grid" aria-label="Équipe enseignante">
         <h2 style="grid-column:1/-1" class="gradient-title">Équipe</h2>
 
@@ -115,7 +117,13 @@
           "Cette formation m'a permis de monter en compétences rapidement — les projets pratiques et le suivi ont été déterminants."<br>
           <cite>— Élève, promotion 2024</cite>
         </blockquote>
-        <p><a class="btn" href="#contact">Rejoindre la prochaine session</a></p>
+        <p><a class="btn primary" href="#contact">Rejoindre la prochaine session</a></p>
+      </section>
+
+      <section id="contact" class="card" aria-label="Contact" style="margin-top:1rem">
+        <h2 class="gradient-title">Contact & Inscription</h2>
+        <p class="muted">Pour toute question ou pour rejoindre une session, écris-nous à <a href="mailto:contact@example.com">contact@example.com</a> ou remplis le formulaire d'inscription.</p>
+        <p><a class="btn primary" href="mailto:contact@example.com">Envoyer un e-mail</a></p>
       </section>
     </main>
 
