@@ -1,0 +1,11 @@
+/* filepath: docs/assets/css/td3/conseil-gestion.css */
+.conseil-header{background:linear-gradient(90deg,rgba(30,111,184,0.06),rgba(255,255,255,0.6));padding:1.25rem;border-radius:12px;border:1px solid rgba(30,111,184,0.06);margin-bottom:1rem}
+.grid{display:grid;grid-template-columns:1fr 320px;gap:var(--gap,1.25rem);margin-top:1rem}
+.card{background:var(--surface);border:1px solid rgba(20,30,60,0.04);padding:1.2rem;border-radius:10px;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);color:#0b2843}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.aside{background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(250,250,252,1));border:1px dashed rgba(20,30,60,0.04);padding:1rem;border-radius:10px;transition:transform var(--dur) var(--ease)}
+.aside:hover{transform:translateY(-3px)}
+
+@media (max-width:900px){
+	.grid{grid-template-columns:1fr;}
+}

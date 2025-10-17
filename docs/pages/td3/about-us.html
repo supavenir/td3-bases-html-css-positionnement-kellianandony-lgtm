@@ -1,0 +1,138 @@
+<!-- filepath: docs/pages/td3/about-us.html -->
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="TD3 Web Arena — formation pratique en HTML, CSS et design d'interface. Ateliers, projet final et suivi personnalisé.">
+  <title>About Us</title>
+  <link rel="stylesheet" href="../../assets/css/td3/web-arena.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+  <div class="container anim-fade">
+    <header class="site-header" role="banner">
+      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">☰</label>
+      <div class="branding">
+        <img class="site-logo" src="../../assets/img/td3/header-bg.jpg" alt="logo" aria-hidden="true">
+        <h1>About Us</h1>
+      </div>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="../../index.html">Accueil</a></li>
+          <li><a class="active" href="about-us.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero" aria-label="Bannière">
+      <figure class="hero-figure">
+        <img src="../../assets/img/td3/header-bg.jpg" alt="bannière" loading="lazy">
+      </figure>
+      <div class="hero-content anim-slide-up" role="region" aria-labelledby="hero-title">
+        <h2 id="hero-title" class="gradient-title">Notre mission pédagogique</h2>
+        <p>Accompagner les apprenants vers l'autonomie numérique et la créativité web, en favorisant la pratique et la collaboration.</p>
+        <p class="muted">Projets pratiques, retours réguliers et bonnes pratiques UX/CSS.</p>
+        <p><a class="btn primary" href="#team">Rencontrer l'équipe</a></p>
+      </div>
+    </section>
+
+  <main id="main-content">
+      <section id="team" class="stagger team-grid" aria-label="Équipe enseignante">
+        <h2 style="grid-column:1/-1" class="gradient-title">Équipe</h2>
+
+        <article class="card has-sheen anim-fade interactive" style="--delay:0ms" aria-label="Prénom Nom — Enseignant" tabindex="0">
+          <img class="article-image interactive-image" src="../../assets/img/td3/header-bg.jpg" alt="Portrait Prénom Nom" loading="lazy">
+          <div style="padding:0.8rem">
+            <h3>Prénom Nom</h3>
+            <p class="muted">Enseignant — Développement frontend</p>
+            <p class="muted">Spécialiste HTML/CSS, animations et bonnes pratiques.</p>
+            <p><a class="tag" href="#">Voir profil</a></p>
+          </div>
+        </article>
+
+        <article class="card has-sheen anim-fade interactive" style="--delay:80ms" aria-label="Prénom Nom — Enseignant" tabindex="0">
+          <img class="article-image interactive-image" src="../../assets/img/td3/header-bg.jpg" alt="Portrait Prénom Nom" loading="lazy">
+          <div style="padding:0.8rem">
+            <h3>Prénom Nom</h3>
+            <p class="muted">Enseignant — Design & accessibilité</p>
+            <p class="muted">Passionné par l'UX et la typographie accessible.</p>
+            <p><a class="tag" href="#">Voir travaux</a></p>
+          </div>
+        </article>
+
+        <article class="card has-sheen anim-fade interactive" style="--delay:160ms" aria-label="Support pédagogique" tabindex="0">
+          <img class="article-image interactive-image" src="../../assets/img/td3/header-bg.jpg" alt="Portrait équipe" loading="lazy">
+          <div style="padding:0.8rem">
+            <h3>Support</h3>
+            <p class="muted">Support pédagogique et coordination</p>
+            <p class="muted">Organisation des sessions et suivi des projets.</p>
+          </div>
+        </article>
+      </section>
+
+      <section id="values" class="card" aria-label="Nos valeurs" style="margin-top:1rem">
+        <h2 class="gradient-title">Nos valeurs</h2>
+        <p>Nous croyons en l'apprentissage par la pratique, la collaboration et l'accessibilité. Chaque projet est conçu pour renforcer la confiance technique et le sens du design.</p>
+        <ul>
+          <li><strong>Pratique</strong> — ateliers concrets et feedbacks réguliers.</li>
+          <li><strong>Accessibilité</strong> — inclusion et bonnes pratiques UX dès le départ.</li>
+          <li><strong>Créativité</strong> — encourager les idées originales et les itérations rapides.</li>
+        </ul>
+      </section>
+
+      <section id="learn" class="card" aria-label="Ce que vous apprendrez" style="margin-top:1rem">
+        <h2 class="gradient-title">Ce que vous apprendrez</h2>
+        <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:1rem;">
+          <div class="card">
+            <h3>HTML & Accessibilité</h3>
+            <p class="muted">Structuration sémantique, ARIA, bonnes pratiques SEO et lecteurs d'écran.</p>
+          </div>
+          <div class="card">
+            <h3>CSS moderne</h3>
+            <p class="muted">Flexbox, Grid, responsive, animations et design system.</p>
+          </div>
+          <div class="card">
+            <h3>Design & Prototypage</h3>
+            <p class="muted">Principes UX, typographie, contrastes et tests utilisateurs simples.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" class="card" aria-label="Timeline" style="margin-top:1rem">
+        <h2 class="gradient-title">Exemple de progression (8 semaines)</h2>
+        <ol class="timeline">
+          <li><strong>Semaine 1-2:</strong> Fondamentaux HTML & CSS.</li>
+          <li><strong>Semaine 3-4:</strong> Responsive design & layouts modernes.</li>
+          <li><strong>Semaine 5-6:</strong> Animation, accessibilité et optimisation.</li>
+          <li><strong>Semaine 7-8:</strong> Projet final & présentation.</li>
+        </ol>
+      </section>
+
+      <section id="testimonial" class="card" aria-label="Témoignage" style="margin-top:1rem">
+        <h2 class="gradient-title">Ils en parlent</h2>
+        <blockquote class="testimonial">
+          "Cette formation m'a permis de monter en compétences rapidement — les projets pratiques et le suivi ont été déterminants."<br>
+          <cite>— Élève, promotion 2024</cite>
+        </blockquote>
+        <p><a class="btn primary" href="#contact">Rejoindre la prochaine session</a></p>
+      </section>
+
+      <section id="contact" class="card" aria-label="Contact" style="margin-top:1rem">
+        <h2 class="gradient-title">Contact & Inscription</h2>
+        <p class="muted">Pour toute question ou pour rejoindre une session, écris-nous à <a href="mailto:contact@example.com">contact@example.com</a> ou remplis le formulaire d'inscription.</p>
+        <p><a class="btn primary" href="mailto:contact@example.com">Envoyer un e-mail</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div>
+        <p class="muted"><a href="../../index.html">← Retour</a></p>
+      </div>
+      <div class="muted">© 2025 — TD3 Web Arena — Élégance et pédagogie</div>
+    </footer>
+  </div>
+</body>
+</html>
