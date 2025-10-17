@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="../../assets/css/td3/web-arena.css">
 </head>
 <body>
-  <div class="container fade-in">
-    <header class="site-header">
+  <div class="container anim-fade">
+    <header class="site-header" role="banner">
       <div class="branding">
         <h1>Blog</h1>
       </div>
@@ -22,16 +22,16 @@
       </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero anim-slide-up" aria-label="Présentation blog">
       <p class="muted">Articles et notes sur la pratique du design web et du positionnement CSS.</p>
     </section>
 
-    <main>
-      <article class="card">
+    <main class="stagger" role="main">
+      <article class="card anim-fade" role="article" aria-labelledby="article-title">
         <figure class="hero-figure">
           <img class="article-image" src="../../assets/img/td3/blog-img1.jpg" alt="blog sample" loading="lazy">
         </figure>
-        <h2>Article d'exemple</h2>
+        <h2 id="article-title">Article d'exemple</h2>
         <p>Contenu de démonstration pour le blog.</p>
       </article>
     </main>

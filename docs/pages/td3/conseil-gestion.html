@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="../../assets/css/td3/conseil-gestion.css">
 </head>
 <body>
-  <div class="container fade-in">
-    <header class="site-header">
+  <div class="container anim-fade">
+    <header class="site-header" role="banner">
       <div class="branding">
         <h1>Conseil &amp; Gestion</h1>
       </div>
@@ -23,20 +23,20 @@
       </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero anim-slide-up" aria-label="Introduction conseil">
       <p class="muted">Travaillez la structure en blocs et les règles de positionnement pour des interfaces professionnelles.</p>
     </section>
 
-    <main class="grid" role="main">
-      <section class="card">
+    <main class="grid stagger" role="main">
+      <section class="card anim-fade" role="region" aria-labelledby="objectifs">
         <figure class="hero-figure">
           <img class="article-image" src="../../assets/img/td3/df-min.jpg" alt="illustration conseil" loading="lazy">
         </figure>
-        <h2>Objectifs</h2>
+        <h2 id="objectifs">Objectifs</h2>
         <p>Expliquer les principes de positionnement et présenter des cas pratiques.</p>
       </section>
 
-      <aside class="aside">
+      <aside class="aside anim-fade" role="complementary" aria-label="Ressources">
         <h3>Ressources</h3>
         <ul>
           <li>Guide de positionnement CSS</li>
