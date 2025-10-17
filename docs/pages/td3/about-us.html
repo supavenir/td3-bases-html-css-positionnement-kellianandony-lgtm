@@ -23,37 +23,49 @@
       </nav>
     </header>
 
-    <section class="hero anim-slide-up" aria-label="Bannière">
+    <section class="hero" aria-label="Bannière">
       <figure class="hero-figure">
         <img src="../../assets/img/td3/header-bg.jpg" alt="bannière" loading="lazy">
       </figure>
-      <div class="hero-overlay">
-        <h2>Notre mission pédagogique</h2>
-        <p class="muted">Accompagner les apprenants vers l'autonomie numérique et la créativité web.</p>
+      <div class="hero-content anim-slide-up" role="region" aria-labelledby="hero-title">
+        <h2 id="hero-title" class="gradient-title">Notre mission pédagogique</h2>
+        <p>Accompagner les apprenants vers l'autonomie numérique et la créativité web, en favorisant la pratique et la collaboration.</p>
+        <p class="muted">Projets pratiques, retours réguliers et bonnes pratiques UX/CSS.</p>
         <p><a class="btn" href="#team">Rencontrer l'équipe</a></p>
       </div>
     </section>
 
     <main>
-      <section id="team" class="stagger grid team-grid" aria-label="Équipe enseignante">
-        <h2 style="grid-column:1/-1">Équipe</h2>
+      <section id="team" class="stagger team-grid" aria-label="Équipe enseignante">
+        <h2 style="grid-column:1/-1" class="gradient-title">Équipe</h2>
 
-        <article class="card has-sheen anim-fade" style="--delay:0ms">
-          <img class="article-image" src="../../assets/img/td3/header-bg.jpg" alt="Membre 1" loading="lazy">
-          <h3>Kellian</h3>
-          <p class="muted">Enseignant — Développement frontend</p>
+        <article class="card has-sheen anim-fade interactive" style="--delay:0ms" aria-label="Kellian — Enseignant" tabindex="0">
+          <img class="article-image interactive-image" src="../../assets/img/td3/header-bg.jpg" alt="Portrait Kellian" loading="lazy">
+          <div style="padding:0.8rem">
+            <h3>Kellian</h3>
+            <p class="muted">Enseignant — Développement frontend</p>
+            <p class="muted">Spécialiste HTML/CSS, animations et bonnes pratiques.</p>
+            <p><a class="tag" href="#">Voir profil</a></p>
+          </div>
         </article>
 
-        <article class="card has-sheen anim-fade" style="--delay:80ms">
-          <img class="article-image" src="../../assets/img/td3/header-bg.jpg" alt="Membre 2" loading="lazy">
-          <h3>Andony</h3>
-          <p class="muted">Enseignant — Design & accessibilité</p>
+        <article class="card has-sheen anim-fade interactive" style="--delay:80ms" aria-label="Andony — Enseignant" tabindex="0">
+          <img class="article-image interactive-image" src="../../assets/img/td3/header-bg.jpg" alt="Portrait Andony" loading="lazy">
+          <div style="padding:0.8rem">
+            <h3>Andony</h3>
+            <p class="muted">Enseignant — Design & accessibilité</p>
+            <p class="muted">Passionné par l'UX et la typographie accessible.</p>
+            <p><a class="tag" href="#">Voir travaux</a></p>
+          </div>
         </article>
 
-        <article class="card has-sheen anim-fade" style="--delay:160ms">
-          <img class="article-image" src="../../assets/img/td3/header-bg.jpg" alt="Membre 3" loading="lazy">
-          <h3>Equipe</h3>
-          <p class="muted">Support pédagogique</p>
+        <article class="card has-sheen anim-fade interactive" style="--delay:160ms" aria-label="Support pédagogique" tabindex="0">
+          <img class="article-image interactive-image" src="../../assets/img/td3/header-bg.jpg" alt="Portrait équipe" loading="lazy">
+          <div style="padding:0.8rem">
+            <h3>Support</h3>
+            <p class="muted">Support pédagogique et coordination</p>
+            <p class="muted">Organisation des sessions et suivi des projets.</p>
+          </div>
         </article>
       </section>
     </main>
