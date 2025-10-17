@@ -2,19 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root{
-  /* Palette */
-  --bg:#f5f7fb;
-  --surface:#ffffff;
-  --primary:#1e6fb8; /* texte/accents principaux (bleu) */
-  --muted:#6b7280;
+  /* Palette & tokens */
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --primary: #0b5fa8; /* texte/accents principaux (bleu profond) */
+  --accent: #1e6fb8;
+  --muted: #6b7280;
   --glass: rgba(255,255,255,0.6);
   --shadow-sm: 0 6px 18px rgba(20,30,60,0.06);
-  --shadow-md: 0 12px 34px rgba(20,30,60,0.09);
-  --radius: 10px;
+  --shadow-md: 0 18px 44px rgba(20,30,60,0.10);
+  --radius: 12px;
   --gap: 1rem;
   --font-sans: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   --ease: cubic-bezier(.22,.9,.3,1);
   --dur: 260ms;
+  --anim-fast: 200ms;
+  --anim-med: 420ms;
+  --anim-slow: 900ms;
 }
 
 *{box-sizing:border-box}
@@ -29,74 +33,72 @@ body{
 }
 
 /* Layout helpers */
-.container{max-width:1100px;margin:0 auto;padding:1.5rem}
+.container{max-width:1200px;margin:0 auto;padding:1.5rem}
 .site-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
 .branding{display:flex;gap:0.75rem;align-items:center}
-.branding h1{margin:0;font-size:1.1rem;color:var(--primary);font-weight:600}
+.branding h1{margin:0;font-size:1.15rem;color:var(--primary);font-weight:700}
 .site-nav ul{list-style:none;padding:0;margin:0;display:flex;gap:0.5rem}
-.site-nav a{display:inline-block;padding:0.5rem 0.8rem;border-radius:8px;color:var(--primary);text-decoration:none;font-weight:600}
-.site-nav a:hover{background:rgba(30,111,184,0.08);transform:translateY(-3px);transition:all var(--dur) var(--ease)}
-.site-nav a.active{background:var(--primary);color:#fff;box-shadow:var(--shadow-sm)}
+
+/* Nav with animated underline */
+.site-nav{position:relative}
+.site-nav ul{position:relative}
+.site-nav a{display:inline-block;padding:0.45rem 0.75rem;border-radius:8px;color:var(--primary);text-decoration:none;font-weight:600;position:relative;transition:color var(--dur) var(--ease)}
+.site-nav a::after{content:'';position:absolute;left:12%;right:12%;bottom:-8px;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left center;transition:transform 240ms var(--ease),opacity 240ms}
+.site-nav a:hover{color:var(--accent)}
+.site-nav a:hover::after,.site-nav a.active::after{transform:scaleX(1);opacity:1}
+.site-nav a.active{background:var(--accent);color:#fff;box-shadow:var(--shadow-sm)}
 
 /* Hero / intro */
-.hero{background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);padding:1rem;border-radius:var(--radius);margin-bottom:1rem;border:1px solid rgba(30,111,184,0.06)}
+.hero{background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);padding:1rem;border-radius:calc(var(--radius) + 2px);margin-bottom:1rem;border:1px solid rgba(30,111,184,0.06)}
 .hero p{margin:0;color:var(--muted)}
 
 /* Cards */
-.card{background:var(--surface);border-radius:calc(var(--radius) - 2px);padding:1rem;border:1px solid rgba(20,30,60,0.04);box-shadow:var(--shadow-sm);transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);color:#0b2843}
-.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.card{background:var(--surface);border-radius:calc(var(--radius));padding:1rem;border:1px solid rgba(20,30,60,0.04);box-shadow:var(--shadow-sm);transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);color:#0b2843;transform-origin:center}
+.card:hover{transform:translateY(-10px) rotateX(0.6deg);box-shadow:var(--shadow-md)}
 
 /* Buttons */
-.btn{display:inline-block;background:var(--primary);color:#fff;padding:0.45rem 0.85rem;border-radius:8px;text-decoration:none;border:0;font-weight:600;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:0.45rem 0.85rem;border-radius:10px;text-decoration:none;border:0;font-weight:700;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),background 180ms}
 .btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.btn:active{transform:translateY(-1px) scale(0.995);box-shadow:0 6px 14px rgba(11,95,168,0.06)}
 
-/* Footer */
-.site-footer{margin-top:2.5rem;color:var(--muted);font-size:0.95rem}
-
-/* small utilities */
-.muted{color:var(--muted)}
-
-/* subtle entrance */
-.fade-in{opacity:0;animation:fadeIn 420ms var(--ease) both}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-/* Accessibility */
-:focus-visible{outline:3px solid rgba(30,111,184,0.15);outline-offset:3px}
-@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+/* Tags */
+.tag{display:inline-block;padding:0.25rem 0.6rem;border-radius:999px;background:rgba(30,111,184,0.08);color:var(--accent);font-size:0.85rem;transition:transform 200ms var(--ease),background 200ms}
+.tag:hover{transform:translateY(-3px);background:rgba(30,111,184,0.12)}
 
 /* Images */
 .site-logo{width:44px;height:44px;border-radius:8px;object-fit:cover}
 .hero-figure{display:block;width:100%;border-radius:12px;overflow:hidden;margin:0 0 1rem 0}
+.hero-figure img{display:block;width:100%;height:auto;transition:transform var(--anim-slow) var(--ease)}
+.hero-figure:hover img{transform:scale(1.04) translateY(-6px)}
 .article-image{width:100%;height:auto;display:block;border-radius:10px;object-fit:cover}
 
+/* Micro-interaction: subtle sheen on cards (on hover only) */
+.card.has-sheen{position:relative;overflow:hidden}
+.card.has-sheen::after{content:'';position:absolute;left:-120%;top:0;width:120%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent);transform:skewX(-15deg);opacity:0;transition:transform 650ms linear,opacity 200ms}
+.card.has-sheen:hover::after{left:120%;opacity:0.85}
+
+/* small utilities */
+.muted{color:var(--muted)}
+.fade-in{opacity:0;animation:fadeIn var(--anim-med) var(--ease) both}
+
 /* Animation utilities */
-:root{
-  --anim-fast: 220ms;
-  --anim-medium: 420ms;
-  --anim-slow: 720ms;
-}
-
-.anim-fade{animation:fadeIn var(--anim-medium) cubic-bezier(.2,.9,.3,1) both}
-.anim-slide-up{animation:slideUp var(--anim-medium) cubic-bezier(.2,.9,.3,1) both}
+.anim-fade{animation:fadeIn var(--anim-med) var(--ease) both}
+.anim-slide-up{animation:slideUp var(--anim-med) var(--ease) both}
 .anim-float{animation:floatSlight var(--anim-slow) ease-in-out infinite}
-.anim-sheen{position:relative;overflow:hidden}
-.anim-sheen::after{content:' ';position:absolute;left:-120%;top:0;width:120%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent);transform:skewX(-15deg);opacity:0.6;animation:sheen 1.6s linear infinite}
-
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@keyframes slideUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes floatSlight{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
-@keyframes sheen{0%{left:-120%}100%{left:120%}}
-
-/* stagger utility: apply to container > * to stagger children animations */
-.stagger > *{opacity:0;animation:fadeIn var(--anim-medium) cubic-bezier(.2,.9,.3,1) both}
+.stagger > *{opacity:0;animation:fadeIn var(--anim-med) var(--ease) both}
 .stagger > *:nth-child(1){animation-delay:80ms}
 .stagger > *:nth-child(2){animation-delay:160ms}
 .stagger > *:nth-child(3){animation-delay:240ms}
 .stagger > *:nth-child(4){animation-delay:320ms}
 
-@media (prefers-reduced-motion: reduce){
-  .anim-fade, .anim-slide-up, .anim-float, .anim-sheen, .stagger > *{animation:none !important;transition:none !important}
-}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes slideUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes floatSlight{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+/* Accessibility */
+:focus-visible{outline:3px solid rgba(11,95,168,0.14);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+
 
 
 
