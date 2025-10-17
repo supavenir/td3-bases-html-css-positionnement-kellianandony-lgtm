@@ -11,9 +11,10 @@
   <div class="container anim-fade">
     <header class="site-header" role="banner">
       <div class="branding">
+        <img class="site-logo" src="../../assets/img/td3/header-bg.jpg" alt="logo" aria-hidden="true">
         <h1>About Us</h1>
       </div>
-      <nav class="site-nav">
+      <nav class="site-nav" aria-label="Navigation principale">
         <ul>
           <li><a href="../../index.html">Accueil</a></li>
           <li><a class="active" href="about-us.html">About Us</a></li>
@@ -26,13 +27,34 @@
       <figure class="hero-figure">
         <img src="../../assets/img/td3/header-bg.jpg" alt="bannière" loading="lazy">
       </figure>
-      <p class="muted">Présentation de l'équipe pédagogique et des objectifs pédagogiques.</p>
+      <div class="hero-overlay">
+        <h2>Notre mission pédagogique</h2>
+        <p class="muted">Accompagner les apprenants vers l'autonomie numérique et la créativité web.</p>
+        <p><a class="btn" href="#team">Rencontrer l'équipe</a></p>
+      </div>
     </section>
 
     <main>
-      <section class="card">
-        <h2>Équipe</h2>
-        <p>Présentation brève de l'équipe pédagogique.</p>
+      <section id="team" class="stagger grid team-grid" aria-label="Équipe enseignante">
+        <h2 style="grid-column:1/-1">Équipe</h2>
+
+        <article class="card has-sheen anim-fade" style="--delay:0ms">
+          <img class="article-image" src="../../assets/img/td3/header-bg.jpg" alt="Membre 1" loading="lazy">
+          <h3>Kellian</h3>
+          <p class="muted">Enseignant — Développement frontend</p>
+        </article>
+
+        <article class="card has-sheen anim-fade" style="--delay:80ms">
+          <img class="article-image" src="../../assets/img/td3/header-bg.jpg" alt="Membre 2" loading="lazy">
+          <h3>Andony</h3>
+          <p class="muted">Enseignant — Design & accessibilité</p>
+        </article>
+
+        <article class="card has-sheen anim-fade" style="--delay:160ms">
+          <img class="article-image" src="../../assets/img/td3/header-bg.jpg" alt="Membre 3" loading="lazy">
+          <h3>Equipe</h3>
+          <p class="muted">Support pédagogique</p>
+        </article>
       </section>
     </main>
 

@@ -19,6 +19,8 @@
   --anim-fast: 200ms;
   --anim-med: 420ms;
   --anim-slow: 900ms;
+  --max-content-width: 1100px;
+  --card-gap: 1rem;
 }
 
 *{box-sizing:border-box}
@@ -52,6 +54,12 @@ body{
 .hero{background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);padding:1rem;border-radius:calc(var(--radius) + 2px);margin-bottom:1rem;border:1px solid rgba(30,111,184,0.06)}
 .hero p{margin:0;color:var(--muted)}
 
+/* Hero overlay content */
+.hero{position:relative;overflow:visible}
+.hero-overlay{position:absolute;left:1.25rem;top:1.25rem;color:var(--primary);max-width:54%;background:linear-gradient(180deg,rgba(255,255,255,0.72),rgba(255,255,255,0.5));padding:1rem;border-radius:10px;border:1px solid rgba(11,95,168,0.06);box-shadow:var(--shadow-sm);backdrop-filter: blur(6px)}
+.hero-overlay h2{margin:0 0 0.35rem 0;font-size:1.25rem}
+
+
 /* Cards */
 .card{background:var(--surface);border-radius:calc(var(--radius));padding:1rem;border:1px solid rgba(20,30,60,0.04);box-shadow:var(--shadow-sm);transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);color:#0b2843;transform-origin:center}
 .card:hover{transform:translateY(-10px) rotateX(0.6deg);box-shadow:var(--shadow-md)}
@@ -71,6 +79,15 @@ body{
 .hero-figure img{display:block;width:100%;height:auto;transition:transform var(--anim-slow) var(--ease)}
 .hero-figure:hover img{transform:scale(1.04) translateY(-6px)}
 .article-image{width:100%;height:auto;display:block;border-radius:10px;object-fit:cover}
+
+/* Team grid */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--card-gap);align-items:start}
+.team-grid h2{margin:0 0 0.5rem 0;font-size:1.35rem}
+.team-grid .card{padding:0}
+.team-grid .card h3{margin:0.5rem 0 0.15rem 0}
+
+/* stagger animation using CSS custom property for delays */
+.stagger > *{opacity:0;transform:translateY(10px);animation:fadeIn var(--anim-med) var(--ease) both;animation-delay:var(--delay, 0ms)}
 
 /* Micro-interaction: subtle sheen on cards (on hover only) */
 .card.has-sheen{position:relative;overflow:hidden}
@@ -98,6 +115,19 @@ body{
 /* Accessibility */
 :focus-visible{outline:3px solid rgba(11,95,168,0.14);outline-offset:3px}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+
+/* Responsive */
+@media (max-width: 900px){
+  .container{padding:1rem}
+  .hero-overlay{position:static;max-width:100%;margin-top:-0.75rem}
+  .team-grid{grid-template-columns:1fr;gap:0.75rem}
+  .site-nav ul{gap:0.25rem}
+}
+
+@media (max-width: 480px){
+  .branding h1{font-size:1rem}
+  .hero-overlay h2{font-size:1.05rem}
+}
 
 
 
