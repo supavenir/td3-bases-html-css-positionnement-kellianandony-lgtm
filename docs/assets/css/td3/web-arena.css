@@ -69,4 +69,34 @@ body{
 .hero-figure{display:block;width:100%;border-radius:12px;overflow:hidden;margin:0 0 1rem 0}
 .article-image{width:100%;height:auto;display:block;border-radius:10px;object-fit:cover}
 
+/* Animation utilities */
+:root{
+  --anim-fast: 220ms;
+  --anim-medium: 420ms;
+  --anim-slow: 720ms;
+}
+
+.anim-fade{animation:fadeIn var(--anim-medium) cubic-bezier(.2,.9,.3,1) both}
+.anim-slide-up{animation:slideUp var(--anim-medium) cubic-bezier(.2,.9,.3,1) both}
+.anim-float{animation:floatSlight var(--anim-slow) ease-in-out infinite}
+.anim-sheen{position:relative;overflow:hidden}
+.anim-sheen::after{content:' ';position:absolute;left:-120%;top:0;width:120%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent);transform:skewX(-15deg);opacity:0.6;animation:sheen 1.6s linear infinite}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes slideUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes floatSlight{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+@keyframes sheen{0%{left:-120%}100%{left:120%}}
+
+/* stagger utility: apply to container > * to stagger children animations */
+.stagger > *{opacity:0;animation:fadeIn var(--anim-medium) cubic-bezier(.2,.9,.3,1) both}
+.stagger > *:nth-child(1){animation-delay:80ms}
+.stagger > *:nth-child(2){animation-delay:160ms}
+.stagger > *:nth-child(3){animation-delay:240ms}
+.stagger > *:nth-child(4){animation-delay:320ms}
+
+@media (prefers-reduced-motion: reduce){
+  .anim-fade, .anim-slide-up, .anim-float, .anim-sheen, .stagger > *{animation:none !important;transition:none !important}
+}
+
+
 
