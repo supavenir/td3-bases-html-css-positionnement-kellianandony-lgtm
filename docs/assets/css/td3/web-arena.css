@@ -1,47 +1,66 @@
 /* filepath: docs/assets/css/td3/web-arena.css */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root{
-  --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  --accent:#2b6cb0;
-  --muted:#666;
-  --bg:#f7f7f8;
-  --surface: #ffffff;
-  --shadow: 0 10px 24px rgba(2,6,23,0.06);
-  --ease: cubic-bezier(.2,.9,.2,1);
-  --duration: 220ms;
+  /* Palette */
+  --bg:#f5f7fb;
+  --surface:#ffffff;
+  --primary:#1e6fb8; /* texte/accents principaux (bleu) */
+  --muted:#6b7280;
+  --glass: rgba(255,255,255,0.6);
+  --shadow-sm: 0 6px 18px rgba(20,30,60,0.06);
+  --shadow-md: 0 12px 34px rgba(20,30,60,0.09);
+  --radius: 10px;
+  --gap: 1rem;
+  --font-sans: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --ease: cubic-bezier(.22,.9,.3,1);
+  --dur: 260ms;
 }
+
 *{box-sizing:border-box}
+html,body{height:100%}
 body{
-  font-family: var(--font-sans);
-  margin:0;padding:1rem;background:var(--bg);color:#222;
+  font-family:var(--font-sans);
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#eef3fb);
+  color:var(--primary);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
-.site-header h1{margin:0 0 0.75rem 0;color:var(--accent);font-size:1.25rem}
-.site-nav ul{list-style:none;padding:0;margin:0 0 1rem 0;display:flex;gap:0.5rem}
-.site-nav a{text-decoration:none;color:var(--accent);padding:0.25rem 0.35rem;border-radius:4px}
-.site-nav a{
-  transition: background var(--duration) var(--ease), color var(--duration) var(--ease), transform var(--duration) var(--ease);
-}
-.site-nav a:hover{background:rgba(43,108,176,0.08);transform:translateY(-2px)}
-.site-nav a.active{background:var(--accent);color:#fff;box-shadow:var(--shadow)}
-.site-footer{margin-top:2rem;color:var(--muted);font-size:0.9rem}
-.container{max-width:900px;margin:0 auto;padding:0 1rem}
-button, a.button{background:var(--accent);color:white;padding:0.4rem 0.6rem;border-radius:4px;text-decoration:none;border:0;cursor:pointer;transition:transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease), opacity var(--duration) var(--ease)}
-a.button:hover, button:hover{opacity:0.98;transform:translateY(-3px);box-shadow:var(--shadow)}
 
-/* Cards and content subtle lift */
-.card{background:var(--surface);transition:transform var(--duration) var(--ease),box-shadow var(--duration) var(--ease);will-change:transform}
-.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+/* Layout helpers */
+.container{max-width:1100px;margin:0 auto;padding:1.5rem}
+.site-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.branding{display:flex;gap:0.75rem;align-items:center}
+.branding h1{margin:0;font-size:1.1rem;color:var(--primary);font-weight:600}
+.site-nav ul{list-style:none;padding:0;margin:0;display:flex;gap:0.5rem}
+.site-nav a{display:inline-block;padding:0.5rem 0.8rem;border-radius:8px;color:var(--primary);text-decoration:none;font-weight:600}
+.site-nav a:hover{background:rgba(30,111,184,0.08);transform:translateY(-3px);transition:all var(--dur) var(--ease)}
+.site-nav a.active{background:var(--primary);color:#fff;box-shadow:var(--shadow-sm)}
 
-/* Fade-in on container for nicer load */
-.container{opacity:0;animation:fadeIn 360ms var(--ease) both}
+/* Hero / intro */
+.hero{background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);padding:1rem;border-radius:var(--radius);margin-bottom:1rem;border:1px solid rgba(30,111,184,0.06)}
+.hero p{margin:0;color:var(--muted)}
 
-@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+/* Cards */
+.card{background:var(--surface);border-radius:calc(var(--radius) - 2px);padding:1rem;border:1px solid rgba(20,30,60,0.04);box-shadow:var(--shadow-sm);transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);color:#0b2843}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
 
-/* Focus styles for accessibility */
-:focus-visible{outline:3px solid rgba(43,108,176,0.18);outline-offset:2px}
+/* Buttons */
+.btn{display:inline-block;background:var(--primary);color:#fff;padding:0.45rem 0.85rem;border-radius:8px;text-decoration:none;border:0;font-weight:600;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+.btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}
 
-/* Respect prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce){
-  *, *::before, *::after{animation:none !important;transition:none !important}
-}
+/* Footer */
+.site-footer{margin-top:2.5rem;color:var(--muted);font-size:0.95rem}
+
+/* small utilities */
+.muted{color:var(--muted)}
+
+/* subtle entrance */
+.fade-in{opacity:0;animation:fadeIn 420ms var(--ease) both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Accessibility */
+:focus-visible{outline:3px solid rgba(30,111,184,0.15);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+

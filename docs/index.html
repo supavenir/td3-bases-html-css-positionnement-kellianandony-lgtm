@@ -7,24 +7,36 @@
   <link rel="stylesheet" href="assets/css/td3/web-arena.css">
 </head>
 <body>
-  <header class="site-header">
-    <h1>TD3 — Bases HTML/CSS (positionnement)</h1>
-  </header>
+  <div class="container fade-in">
+    <header class="site-header">
+      <div class="branding">
+        <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="#1e6fb8"/></svg>
+        <h1>TD3 — Bases HTML/CSS</h1>
+      </div>
+      <nav class="site-nav">
+        <ul>
+          <li><a class="active" href="pages/td3/conseil-gestion.html">Conseil &amp; Gestion</a></li>
+          <li><a href="pages/td3/about-us.html">About Us</a></li>
+          <li><a href="pages/td3/blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <nav class="site-nav">
-    <ul>
-      <li><a href="pages/td3/conseil-gestion.html">Conseil &amp; Gestion</a></li>
-      <li><a href="pages/td3/about-us.html">About Us</a></li>
-      <li><a href="pages/td3/blog.html">Blog</a></li>
-    </ul>
-  </nav>
+    <section class="hero">
+      <p class="muted">Exercices et exemples sur le positionnement et la structuration en blocs. Choisis une page pour commencer.</p>
+    </section>
 
-  <main>
-    <p>Cliquer sur une page pour ouvrir l'exercice.</p>
-  </main>
+    <main>
+      <div style="display:flex;gap:0.75rem;margin-top:1rem">
+        <a class="btn" href="pages/td3/conseil-gestion.html">Conseil &amp; Gestion</a>
+        <a class="btn" href="pages/td3/about-us.html">About Us</a>
+        <a class="btn" href="pages/td3/blog.html">Blog</a>
+      </div>
+    </main>
 
-  <footer class="site-footer">
-    <p>TD3 — dépôt local</p>
-  </footer>
+    <footer class="site-footer">
+      <p class="muted">TD3 — dépôt local</p>
+    </footer>
+  </div>
 </body>
 </html>
