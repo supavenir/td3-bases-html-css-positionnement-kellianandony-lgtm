@@ -64,3 +64,9 @@ body{
 :focus-visible{outline:3px solid rgba(30,111,184,0.15);outline-offset:3px}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
 
+/* Images */
+.site-logo{width:44px;height:44px;border-radius:8px;object-fit:cover}
+.hero-figure{display:block;width:100%;border-radius:12px;overflow:hidden;margin:0 0 1rem 0}
+.article-image{width:100%;height:auto;display:block;border-radius:10px;object-fit:cover}
+
+
