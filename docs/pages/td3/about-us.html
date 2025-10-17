@@ -10,6 +10,8 @@
 <body>
   <div class="container anim-fade">
     <header class="site-header" role="banner">
+      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">☰</label>
       <div class="branding">
         <img class="site-logo" src="../../assets/img/td3/header-bg.jpg" alt="logo" aria-hidden="true">
         <h1>About Us</h1>
@@ -70,8 +72,11 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <p class="muted"><a href="../../index.html">← Retour</a></p>
+    <footer class="site-footer" role="contentinfo">
+      <div>
+        <p class="muted"><a href="../../index.html">← Retour</a></p>
+      </div>
+      <div class="muted">© 2025 — TD3 Web Arena — Élégance et pédagogie</div>
     </footer>
   </div>
 </body>
