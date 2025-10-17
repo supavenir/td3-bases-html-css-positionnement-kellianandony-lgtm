@@ -1,0 +1,5 @@
+/* filepath: docs/assets/css/td3/conseil-gestion.css */
+.conseil-header{background:linear-gradient(90deg,#e6f0ff,#fff);padding:1rem;border-radius:6px;border:1px solid #dbe6fb}
+.grid{display:grid;grid-template-columns:1fr 320px;gap:1rem;margin-top:1rem}
+.card{background:#fff;border:1px solid #e6e9ef;padding:1rem;border-radius:6px}
+.aside{background:#fff;border:1px dashed #e2e8f0;padding:1rem;border-radius:6px}
